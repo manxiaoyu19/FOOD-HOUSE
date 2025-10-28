@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Exploration - Food Sharing</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 复用导航栏 -->
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="logo">Food <span>Exploration</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="food-sharing.html" class="active">Food Sharing</a>
+        <a href="food-guide.html">Food Guide</a>
+        <a href="recipe-details.html">Recipe Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面内容 -->
+  <section class="page-content">
+    <div class="container">
+      <h2>Food Sharing Community</h2>
+      <p>Share your favorite meals, restaurant finds, and cooking experiments with fellow food enthusiasts.</p>
+      
+      <div class="sharing-grid">
+        <div class="sharing-card">
+          <img src="images/rice cake.png" alt="Food Sharing" />
+          <h3>Hidden street snacks in South Korea</h3>
+          <p>Ah, I highly recommend the spicy stir-fried rice cakes coated in sauce—they’re absolutely amazing to eat in winter! The hot dog on a stick has that perfect, endless cheese pull when you take a bite. The cheese balls and fried chicken are so delicious that each bite leaves a lingering taste you’ll keep coming back for. I strongly recommend them to everyone!<br>——from Amelia</p>
+        </div>
+        <div class="sharing-card">
+          <img src="images/noodles.png" alt="Food Sharing" />
+          <h3>Homemade Italian Feast</h3>
+          <p>The combination of rich black truffle sauce and cheesy tomato meat sauce is simply a divine delicacy!<br>——from Bella</p>
+        </div>
+        <div class="sharing-card">
+          <img src="images/glutinous rice.png" alt="Food Sharing" />
+          <h3>Street Food in Bangkok</h3>
+          <p>Spicy papaya salad, Taro Paste and Coconut Shred Cake and mango sticky rice <br>——from Jack's Bangkok food diary.</p>
+        </div>
+      </div>
+
+      <div class="share-form">
+        <h3>Share Your Story</h3>
+        <form>
+          <input type="text" placeholder="Title" class="form-input" />
+          <textarea placeholder="Your food story..." class="form-textarea"></textarea>
+          <input type="file" class="form-file" />
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 复用页脚 -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025 Food Exploration. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

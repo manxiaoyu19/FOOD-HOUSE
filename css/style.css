@@ -1,0 +1,452 @@
+/* 全局重置与基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 顶部导航栏 */
+.main-header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f0d879;
+}
+
+.logo span {
+  color: #1d3557;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #457b9d;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #f0d879;
+}
+
+/* 英雄横幅 */
+.hero {
+  background-color: #f1faee;
+  padding: 6rem 0;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  color: #457b9d;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.btn {
+  background-color: #e78089c4;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #d77eaf;
+}
+
+/* 响应式：桌面端横幅左右布局 */
+@media (min-width: 768px) {
+  .hero .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-content {
+    text-align: left;
+    max-width: 50%;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-img {
+    max-width: 45%;
+  }
+}
+
+/* 特色板块 */
+.features {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.features h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 3rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f1faee;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 100%; /* 让图片宽度充满父容器 */
+  height: auto; /* 高度自动计算，保持原始比例 */
+  object-fit: cover; /* 可选：如果图片比例与容器不符，裁剪多余部分（保持比例不变形） */
+  max-width: 100%; /* 限制图片最大宽度不超过原始尺寸（避免过度放大模糊） */
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  color: #1d3557;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #457b9d;
+  margin-bottom: 1.5rem;
+}
+
+.btn-sm {
+  background-color: #457b9d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+}
+
+.btn-sm:hover {
+  background-color: #3a6b87;
+}
+
+/* 响应式：桌面端3列布局 */
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 美食分类 */
+.food-categories {
+  padding: 6rem 0;
+  background-color: #f8f9fa;
+}
+
+.food-categories h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 3rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-card h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(29, 53, 87, 0.8);
+  color: white;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+/* 响应式：桌面端4列布局 */
+@media (min-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 分支页面通用样式 */
+.page-content {
+  padding: 6rem 0;
+}
+
+.page-content h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 2rem;
+}
+
+.page-content p {
+  font-size: 1.125rem;
+  color: #457b9d;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sharing-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sharing-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.sharing-card:hover {
+  transform: translateY(-5px);
+}
+
+.sharing-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sharing-card h3 {
+  padding: 1rem;
+  color: #1d3557;
+  font-size: 1.25rem;
+}
+
+.sharing-card p {
+  padding: 0 1rem 1rem 1rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.share-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.share-form h3 {
+  font-size: 1.5rem;
+  color: #1d3557;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-input,
+.form-textarea,
+.form-file {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* 响应式：桌面端分享卡片3列布局 */
+@media (min-width: 768px) {
+  .sharing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 页脚 */
+.main-footer {
+  background-color: #1d3557;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* 产品页面标题样式--食谱 */
+.products-title {
+  text-align: center;
+  margin: 40px 0 60px;
+  padding: 0 20px;
+}
+
+.products-title h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px; /* 给左侧线条留空间 */
+}
+
+/* 标题前的标志性竖线 */
+.products-title h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 80%;
+  width: 4px;
+  background-color: #FF7A00; /* 橙色线条 */
+}
+
+.products-title .subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 产品网格布局 */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列布局 */
+  gap: 30px; /* 产品间距 */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* 产品项样式 */
+.product-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px); /* 悬停轻微上浮 */
+}
+
+/* 产品图片样式（核心调整） */
+.product-img {
+  width: 100%;
+  height: 220px; /* 固定图片高度，保持统一 */
+  object-fit: cover; /* 裁剪图片保持比例，不拉伸 */
+  border-radius: 8px; /* 圆角效果 */
+  margin-bottom: 15px;
+  display: block; /* 去除图片底部间隙 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 轻微阴影增强层次感 */
+}
+
+/* 产品名称样式 */
+.product-name {
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 500;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 平板显示2列 */
+  }
+  .product-img {
+    height: 180px; /* 平板缩小图片高度 */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* 手机显示1列 */
+  }
+  .product-img {
+    height: 200px; /* 手机保持合适高度 */
+  }
+}
+
