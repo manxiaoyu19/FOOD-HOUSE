@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>产品详情</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pd-container { max-width:1000px; margin:40px auto; text-align:center; padding:0 16px; }
+    .pd-image { max-width:100%; max-height:80vh; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+    .pd-title { margin:16px 0 8px; color:#000; font-size:1.5rem; }
+    .pd-desc { color:#333; line-height:1.6; text-align:justify; text-align-last:center; margin-bottom:20px; white-space:pre-wrap; }
+    .pd-meta { font-size:0.9rem; color:#666; margin-bottom:20px; }
+    .btn-back { display:inline-block; padding:10px 18px; background:#e78089c4; color:#fff; border-radius:999px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="logo">Food <span>Exploration</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="food-sharing.html">Food Sharing</a>
+        <a href="food-guide.html">Food Guide</a>
+        <a href="recipe-details.html">Recipe Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pd-container">
+    <img id="pdImage" class="pd-image" src="" alt="">
+    <h1 id="pdTitle" class="pd-title"></h1>
+    <div id="pdMeta" class="pd-meta"></div>
+    <p id="pdDesc" class="pd-desc"></p>
+    <a href="recipe-details.html" class="btn-back">返回列表</a>
+  </main>
+
+  <script>
+    // 简单数据映射：按需修改或从服务器加载
+    const products = [
+      { src: 'images/4.png', title: 'Mac and Cheese', desc: '经典奶酪通心粉，奶香浓郁，适合家庭快手料理。', info: '尺寸: 1200×800 • 格式: PNG' },
+      { src: 'images/5.png', title: 'Kimchi Jjigae', desc: '韩式泡菜汤，酸辣开胃，搭配米饭最佳。', info: '尺寸: 1200×800 • 格式: PNG' },
+      { src: 'images/6.png', title: 'Hungarian Goulash', desc: '匈牙利炖牛肉，香浓红椒口味，适合寒冷天气。', info: '尺寸: 1200×800 • 格式: PNG' },
+      { src: 'images/7.png', title: 'Pasta Carbonara', desc: '意大利经典卡邦尼拉，鸡蛋与奶酪完美融合。', info: '尺寸: 1200×800 • 格式: PNG' },
+      { src: 'images/8.png', title: 'Greamy Garlic Mushroom Pasta', desc: '奶油蒜香蘑菇意面，口感顺滑。', info: '尺寸: 1200×800 • 格式: PNG' },
+      { src: 'images/9.png', title: 'Easy Chicken Tacos', desc: '简单鸡肉玉米饼，便捷又美味。', info: '尺寸: 1200×800 • 格式: PNG' }
+    ];
+
+    function getQueryParam(name) {
+      const params = new URLSearchParams(location.search);
+      return params.get(name);
+    }
+
+    const idx = parseInt(getQueryParam('index'), 10);
+    const product = (!isNaN(idx) && products[idx]) ? products[idx] : null;
+
+    const pdImage = document.getElementById('pdImage');
+    const pdTitle = document.getElementById('pdTitle');
+    const pdDesc = document.getElementById('pdDesc');
+    const pdMeta = document.getElementById('pdMeta');
+
+    if (product) {
+      pdImage.src = product.src;
+      pdImage.alt = product.title;
+      pdTitle.textContent = product.title;
+      pdDesc.textContent = product.desc;
+      pdMeta.textContent = product.info;
+    } else {
+      pdTitle.textContent = '未找到该产品';
+      pdDesc.textContent = '无法读取图片信息，请返回列表重试。';
+    }
+  </script>
+</body>
+</html>
