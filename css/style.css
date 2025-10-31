@@ -58,7 +58,7 @@
 
 /* 英雄横幅 */
 .hero {
-  background-color: #f1faee;
+  background-color: #f2eec7;/*主页底色*/
   padding: 6rem 0;
 }
 
@@ -150,7 +150,7 @@
 .feature-card {
   text-align: center;
   padding: 2rem;
-  background-color: #f1faee;
+  background-color: #f2eec7;  /*三个子选项底色*/
   border-radius: 8px;
   transition: transform 0.3s;
 }
@@ -178,7 +178,7 @@
 }
 
 .btn-sm {
-  background-color: #457b9d;
+  background-color: #e78089c4;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
@@ -241,7 +241,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(29, 53, 87, 0.8);
+  background-color: rgba(226, 231, 139, 0.632);
   color: white;
   padding: 1rem;
   font-size: 1.25rem;
@@ -349,7 +349,7 @@
 
 /* 页脚 */
 .main-footer {
-  background-color: #1d3557;
+  background-color: #f2eec7;
   color: white;
   padding: 2rem 0;
   text-align: center;
@@ -450,3 +450,115 @@
   }
 }
 
+/* ...existing code... */
+/* Lightbox / 模态查看 */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  gap: 16px;
+}
+
+.lightbox .lb-image {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.lightbox button {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* 关闭按钮放右上角 */
+.lightbox .lb-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 2.2rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 6px;
+}
+
+/* 上一张/下一张按钮 */
+.lightbox .lb-prev,
+.lightbox .lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
+  width: 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox .lb-prev { left: 20px; }
+.lightbox .lb-next { right: 20px; }
+
+/* 在小屏上调整按钮大小 */
+@media (max-width: 480px) {
+  .lightbox .lb-prev,
+  .lightbox .lb-next {
+    width: 40px;
+    height: 56px;
+    font-size: 2rem;
+  }
+}
+/* ...existing code... */
+
+
+/* Guide 页面：标题与正文居中竖向排布 */
+.page-content.guide-page {
+  display: flex;
+  align-items: center;    /* 垂直方向居中 */
+  justify-content: center;/* 水平方向居中 */
+  min-height: 60vh;       /* 根据需要调整占据的高度 */
+  padding: 4rem 0;
+}
+
+.page-content.guide-page .container {
+  display: flex;
+  flex-direction: column; /* 竖向排列：标题在上，正文在下 */
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* 标题保持黑色居中 */
+.page-content.guide-page h2 {
+  color: #000;
+  text-align: center;
+}
+
+/* 段落每行两端对齐，最后一行居中 */
+.page-content.guide-page p,
+.guide-info p {
+  color: #1d3557;
+  line-height: 1.75;
+  max-width: 900px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: justify;             /* 每行对齐 */
+  text-justify: inter-word;
+  text-align-last: center;         /* 最后一行居中 */
+  -webkit-text-align-last: center; /* Safari/Chrome 前缀兼容 */
+}
+/* ...existing code... */

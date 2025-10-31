@@ -1,3 +1,4 @@
+<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -33,50 +34,71 @@
       <div class="products-grid">
         <!-- 产品1 -->
         <div class="product-item">
-          <img src="images/4.png" alt="Mac and Cheese" class="product-img">
+          <a href="images/4.png" class="product-link" data-index="0">
+            <img src="images/4.png" alt="Mac and Cheese" class="product-img">
+          </a>
           <h3 class="product-name">Mac and Cheese</h3>
         </div>
 
         <!-- 产品2 -->
         <div class="product-item">
-          <img src="images/5.png" alt="Kimchi Jjigae" class="product-img">
+          <a href="images/5.png" class="product-link" data-index="1">
+            <img src="images/5.png" alt="Kimchi Jjigae" class="product-img">
+          </a>
           <h3 class="product-name">Kimchi Jjigae</h3>
         </div>
 
         <!-- 产品3 -->
         <div class="product-item">
-          <img src="images/6.png" alt="Hungarian Goulash" class="product-img">
+          <a href="images/6.png" class="product-link" data-index="2">
+            <img src="images/6.png" alt="Hungarian Goulash" class="product-img">
+          </a>
           <h3 class="product-name">Hungarian Goulash</h3>
         </div>
 
         <!-- 产品4 -->
         <div class="product-item">
-          <img src="images/7.png" alt="Pasta Carbonara" class="product-img">
+          <a href="images/7.png" class="product-link" data-index="3">
+            <img src="images/7.png" alt="Pasta Carbonara" class="product-img">
+          </a>
           <h3 class="product-name">Pasta Carbonara</h3>
         </div>
 
         <!-- 产品5 -->
         <div class="product-item">
-          <img src="images/8.png" alt="Greamy Garlic Mushroom Pasta" class="product-img">
+          <a href="images/8.png" class="product-link" data-index="4">
+            <img src="images/8.png" alt="Greamy Garlic Mushroom Pasta" class="product-img">
+          </a>
           <h3 class="product-name">Greamy Garlic Mushroom Pasta</h3>
         </div>
 
         <!-- 产品6 -->
         <div class="product-item">
-          <img src="images/9.png" alt="Easy Chicken Tacos" class="product-img">
+          <a href="images/9.png" class="product-link" data-index="5">
+            <img src="images/9.png" alt="Easy Chicken Tacos" class="product-img">
+          </a>
           <h3 class="product-name">Easy Chicken Tacos</h3>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- lightbox 模态窗口 -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+    <button class="lb-close" aria-label="关闭">&times;</button>
+    <button class="lb-prev" aria-label="上一个">‹</button>
+    <img class="lb-image" src="" alt="">
+    <button class="lb-next" aria-label="下一个">›</button>
+  </div>
+
   <!-- 页脚 -->
   <footer class="main-footer">
     <div class="container">
-      <p>&copy; 2025 Food Exploration. 保留所有权利。</p>
+      <p>&copy; 2025 Food Exploration. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
 </body>
 </html>
+<!-- ...existing code... -->
